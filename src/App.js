@@ -16,7 +16,7 @@ class App extends Component {
   };
 
   handleShows = () =>{
-    console.log(this.state.time);
+    // alert(this.state.time);
     this.setState({
       shows: !this.state.shows,
     });}
@@ -47,6 +47,7 @@ class App extends Component {
             <Button variant="primary" onClick={this.handleShows}>
               Show Card / Hide Card
             </Button>
+            <Card.Text style={showcard}>component was mounted {this.state.time}seconds ago</Card.Text>
           </Card.Body>
         </Card>
       </>
