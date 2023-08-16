@@ -22,7 +22,7 @@ class App extends Component {
     });}
 
   mountTime = () => {
-    this.setState((prev)=>({time:prev.time++}))
+    this.setState((prev)=>({time:prev.time+1}))
   }
 
   componentDidMount() {
