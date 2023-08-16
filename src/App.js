@@ -16,7 +16,7 @@ class App extends Component {
   };
 
   handleShows = () =>{
-    console.log(this.time);
+    console.log(this.state.time);
     this.setState({
       shows: !this.state.shows,
     });}
