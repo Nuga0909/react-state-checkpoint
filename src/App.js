@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { Component } from "react";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Person ={ fullName,bio, imgSrc, profession} and a boolean shows.
 class App extends Component {
@@ -11,41 +11,49 @@ class App extends Component {
     bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, recusandae!",
     imgSrc: "https://avatars.githubusercontent.com/u/98366229?v=4",
     profession: "Web Developer",
-    shows: false
+    shows: false,
+    time: 0,
   };
 
-  handleShows = () => this.setState({
-    shows: !this.state.shows
-  });
+  handleShows = () =>
+    this.setState({
+      shows: !this.state.shows,
+    });
 
+  // mountTime = () => {
+  //   let time = 0;
+  //   time++;
+  //   if(this.state.shows)  console.log(`the component was mounted ${time} ago` ) ;
 
+  // }
+
+  // componentDidMount() {
+  //   setInterval(() => { this.mountTime() }, 1000)
+  // }
 
   render() {
     let showcard;
-    (this.state.shows) ? showcard = { display: 'none' } : showcard = { display: 'block' };
+    this.state.shows
+      ? (showcard = { display: "none" })
+      : (showcard = { display: "block" });
 
     return (
-
       <>
         <div className="shows"></div>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: "18rem" }}>
           <Card.Img style={showcard} variant="top" src={this.state.imgSrc} />
           <Card.Body>
             <Card.Title style={showcard}>{this.state.fullname}</Card.Title>
-            <Card.Text style={showcard}>
-              {this.state.bio}
-            </Card.Text>
-            <Card.Text style={showcard}>
-              {this.state.profession}
-            </Card.Text>
-            <Button variant="primary" onClick={this.handleShows}>Show Card</Button>
+            <Card.Text style={showcard}>{this.state.bio}</Card.Text>
+            <Card.Text style={showcard}>{this.state.profession}</Card.Text>
+            <Button variant="primary" onClick={this.handleShows}>
+              Show Card / Hide Card
+            </Button>
           </Card.Body>
         </Card>
       </>
     );
   }
 }
-
-{/* <div style={displa}></div> */ }
 
 export default App;
