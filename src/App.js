@@ -15,21 +15,19 @@ class App extends Component {
     time: 0,
   };
 
-  handleShows = () =>
+  handleShows = () =>{
+    console.log(this.time);
     this.setState({
       shows: !this.state.shows,
-    });
+    });}
 
-  // mountTime = () => {
-  //   let time = 0;
-  //   time++;
-  //   if(this.state.shows)  console.log(`the component was mounted ${time} ago` ) ;
+  mountTime = () => {
+    this.setState((prev)=>({time:prev.time++}))
+  }
 
-  // }
-
-  // componentDidMount() {
-  //   setInterval(() => { this.mountTime() }, 1000)
-  // }
+  componentDidMount() {
+    setInterval(() => { this.mountTime() }, 1000)
+  }
 
   render() {
     let showcard;
