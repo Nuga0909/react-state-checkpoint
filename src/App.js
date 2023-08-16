@@ -47,7 +47,7 @@ class App extends Component {
             <Button variant="primary" onClick={this.handleShows}>
               Show Card / Hide Card
             </Button>
-            <Card.Text style={showcard}>component was mounted {this.state.time}seconds ago</Card.Text>
+            <Card.Text style={showcard}>component was mounted {this.state.time} seconds ago</Card.Text>
           </Card.Body>
         </Card>
       </>
